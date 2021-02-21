@@ -1,5 +1,9 @@
-module github.com/go-programming-tour-book/tour
+module github.com/xiaohuazjg/blog_service
 
 go 1.15
 
-require github.com/spf13/cobra v1.1.3 // indirect
+require (
+	github.com/gin-gonic/gin v1.6.3
+	github.com/spf13/viper v1.7.1 // indirect
+	gorm.io/gorm v1.20.12 // indirect
+)
