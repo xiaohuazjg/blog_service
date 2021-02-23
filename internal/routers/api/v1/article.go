@@ -1,5 +1,9 @@
 package apiv1
 
+import (
+	"github.com/gin-gonic/gin"
+)
+
 type Article struct {
 }
 

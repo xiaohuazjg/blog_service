@@ -1,4 +1,4 @@
-package pkg
+package errcode
 
 var (
 	Success                  = NewError(0, "成功")
@@ -11,7 +11,3 @@ var (
 	UnauthorizedTokeGenerate = NewError(10000003, "签权失败，Token生成失败")
 	TooManySequests          = NewError(10000007, "请求过多")
 )
-
-func main() {
-
-}

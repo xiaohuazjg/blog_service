@@ -1,6 +1,9 @@
 package routers
 
 import (
+	"/blog_service/routers/api/v1/article"
+	"/blog_service/routers/api/v1/tag"
+
 	"github.com/gin-gonic/gin"
 )
 
