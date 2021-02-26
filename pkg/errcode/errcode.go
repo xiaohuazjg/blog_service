@@ -49,7 +49,7 @@ func (e *Error) WithDetails(details ...string) *Error {
 	newError := *e
 	newError.details = []string{}
 	for _, d := range details {
-		newError = append(newError.details, d)
+		newError.details = append(newError.details, d)
 	}
 	return &newError
 }
@@ -70,7 +70,7 @@ func (e *Error) StatusCode() int {
 		fallthrough
 	case UnauthorizedTokenTimeout.Code():
 		return http.StatusUnauthorized
-	case TooManyRequest.Code():
+	case TooManyRequests.Code():
 		return http.StatusTooManyRequests
 
 	}
