@@ -10,7 +10,27 @@ MaxPageSize:100
 LogSavePath:storage/log
 LogFileName:app
 LogFileExt:.log
+UploadSavePath:storage/uploads
+UploadServerUrl:http://12.0.0.1:8080/static
+UploadImageMaxSize:5  #MB
+UploadImageAllowExt:
+   - .jpg
+   - .jpeg
+   - .png
 
+Email:
+Host:smtp.qq.com
+Port:465
+UserName:xxx
+Password:xxx
+To:
+  - xxx
+
+JWT:
+ Secret:edd
+ Issuer:blog_service
+ Expire:7200
+ 
 Database:
 DBType:mysql
 Username:goweb  #数据库帐号

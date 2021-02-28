@@ -42,11 +42,20 @@ func setupSetting() error {
 	if err != nil {
 		return nil
 	}
+	err = setting.ReadSection("JWT", &global.JWTSetting)
+	if err != nil {
+		return nil
+	}
 	global.ServerSetting.ReadTimeout *= time.Second
 	global.ServerSetting.WriteTimeout *= time.Second
+	global.JWTSetting.Expire *= time.Second
 	return nil
 }
 
+//@title 博客系统
+//@version 0.1
+//@description Go 语言编程之旅
+//@teams of service github.com/xiaohuazjg/blog_service
 func main() {
 	gin.SetMode(global.ServerSetting.RunMode)
 	router := routers.NewRouter()
