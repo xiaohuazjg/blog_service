@@ -2,11 +2,10 @@ package middleware
 
 import (
 	"bytes"
-	"time"
-
 	"github.com/gin-gonic/gin"
 	"github.com/xiaohuazjg/blog_service/global"
 	"github.com/xiaohuazjg/blog_service/pkg/logger"
+	"time"
 )
 
 type AccessLogWriter struct {
@@ -36,9 +35,10 @@ func AccessLog() gin.HandleFunc {
 			"begin_time:%d,end_time:%d"
 		global.Logger.WithFields(fields).Infof(c, s,
 			c.Request.Method,
-			bodywriter.Status,
+			bodywriter.Status(),
 			beginTime,
-			endTime)
+			endTime,
+		)
 
 	}
 }
