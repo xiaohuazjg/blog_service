@@ -12,7 +12,7 @@ type Email struct {
 
 type SMTPInfo struct {
 	Host     string
-	Port     string
+	Port     int
 	IsSSL    bool
 	UserName string
 	Password string
@@ -30,7 +30,7 @@ func (e *Email) SendMail(to []string, subject, body string) error {
 	m.SetHeader("To", to...)
 	m.SetHeader("Subject", subject)
 	m.SetBody("text/html", body)
-	dialer := gomail.Dialer(e.Host, e.Port, e.UserName, e.Password)
+	dialer := gomail.NewDialer(e.Host, e.Port, e.UserName, e.Password)
 	dialer.TLSConfig = &tls.Config{InsecureSkipVerify: e.IsSSL}
 	return dialer.DialAnSend(m)
 

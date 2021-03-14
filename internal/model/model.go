@@ -49,7 +49,7 @@ func NewDBEngine(databaseSetting *setting.DatabaseSettingS) (*gorm.DB, error) {
 
 }
 
-func updateTimeStampForCreateCallback(scope *gorm.scope) {
+func updateTimeStampForCreateCallback(scope *gorm.Scope) {
 	if !scope.HasError() {
 		nowTime := time.Now().Unix()
 		if createTimeField, ok := scope.FieldByName("CreateOn"); ok {

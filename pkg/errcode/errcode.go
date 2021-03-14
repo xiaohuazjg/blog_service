@@ -6,6 +6,7 @@ import (
 )
 
 type Error struct {
+
 	//错误码
 	code int `json:"code"`
 	//错误信息
@@ -18,7 +19,7 @@ var codes = map[int]string{}
 
 func NewError(code int, msg string) *Error {
 	if _, ok := codes[code]; ok {
-		panic(fmt.Sprint("错误码%d已经存在，请换一个", code))
+		panic(fmt.Sprintf("错误码%d已经存在，请换一个", code))
 
 	}
 	codes[code] = msg

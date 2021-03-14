@@ -1,8 +1,9 @@
 package model
 
-import "github.com/xiaohuazjg/blog_service/pkg/app"
-
-import "gorm.io/gorm"
+import (
+	"github.com/xiaohuazjg/blog_service/pkg/app"
+	"gorm.io/gorm"
+)
 
 type Tag struct {
 	*Model
@@ -32,7 +33,7 @@ func (t Tag) Count(db *gorm.DB) (int, error) {
 	return count, nil
 }
 
-func (t Tag) List(db *gorm.DB, pagerOffset, pageSize int) ([]*Tag, error) {
+func (t Tag) List(db *gorm.DB, pageOffset, pageSize int) ([]*Tag, error) {
 	var tags []*Tag
 	var err error
 	if pageOffset >= 0 && pageSize > 0 {

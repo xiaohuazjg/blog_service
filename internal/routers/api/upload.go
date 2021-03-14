@@ -1,13 +1,14 @@
 package api
 
 import (
+	"blog_service/global"
+	"blog_service/internal/services"
+	"blog_service/pkg/app"
+	"blog_service/pkg/convert"
+	"blog_service/pkg/errcode"
+	"blog_service/pkg/upload"
+
 	"github.com/gin-gonic/gin"
-	"github.com/xiaohuazjg/blog_service/global"
-	"github.com/xiaohuazjg/blog_service/internal/services"
-	"github.com/xiaohuazjg/blog_service/pkg/app"
-	"github.com/xiaohuazjg/blog_service/pkg/convert"
-	"github.com/xiaohuazjg/blog_service/pkg/errcode"
-	"github.com/xiaohuazjg/blog_service/pkg/upload"
 )
 
 type Upload struct {
